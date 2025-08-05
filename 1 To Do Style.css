@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --bg: #cde3e1;
+  --fg: #ebddd7;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "RobotoCondensed", sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+#slider {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+  
+}
+.fa-bars{
+  padding: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.sideBar{
+  width: 25rem;
+  height: 50vh;
+  background: pink;
+  position: absolute;
+  top: 0;
+  left: -30rem;
+  transition: left 0.5s ease-in-out;
+}
+
+#content{
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+#content p{
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+#content ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+li {
+  display: inline;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  width: fit-content;
+  transition: border-bottom-color 0.3s ease-in-out;
+}
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+li:hover {
+  border-bottom-color: black;
+}
+
+#slider:hover .sideBar{
+left: 0 !important;
+}
+#title {
+  display: grid;
+  place-items: center;
+  padding: 1rem 2rem;
+}
+#title h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
+}
+.inputContainer{
+  width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+}
+#addTask {
+  width: 40rem;
+  height: 3.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: 0.2rem solid rgb(65, 138, 6);
+  border-right: none;
+  font-size: 1.7rem;
+}
+#dateTime {
+  height: 3.5rem;
+  padding: 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  border: 0.2rem solid rgb(65, 138, 6);
+  border-left: none;
+}
+#addTask:focus {
+  outline: none;
+  border: 0.2rem solid rgb(65, 138, 6);
+  border-right: none;
+}
+#dateTime:focus {
+  outline: none;
+  border: 0.2rem solid rgb(65, 138, 6);
+  border-left: none;
+}
+#btn {
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  background-color: rgb(87, 187, 6);
+  color: white;
+  margin-left: 1rem;
+  cursor: pointer;
+  opacity: 0.9;
+}
+#btn:hover {
+  opacity: 1;
+}
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  place-items: center;
+  gap: 3rem;
+  margin: 2rem;
+}
+.listItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+
+  transition: 0.5s ease-in-out;
+}
+.listItem:hover {
+  transition: 0.5s ease-in-out;
+}
+.icon {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0.3rem 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.3s ease;
+}
+.icon i {
+  cursor: pointer;
+}
+.listItem:hover .icon {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+#list {
+  background: var(--bg);
+  width: 30rem;
+  padding: 0.5rem 0.8rem 1rem 0.8rem;
+  position: relative;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 0.3rem rgb(83, 82, 82);
+}
+#txtIcon{
+  display: flex;
+  gap: 2rem;
+}
+#txtIcon i{
+  margin-top: 0.25rem;
+  display: none;
+}
+.listItem:hover #txtIcon i{
+  display: block;
+}
+#task {
+  margin-bottom: 2rem;
+}
+#dt {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.8rem;
+}
+#dt p {
+  border-bottom: 0.1rem solid black;
+}
+#dt i {
+  display: inline-block;
+  font-size: 1.3rem; 
+  color: green; 
+  width: auto; 
+}
+#back{
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+#back a{
+  text-decoration: none;
+  color: white;
+}
+#clearHistory{
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+#clearHistoryBtn, #backBtn{
+    padding: 0.3rem 1rem;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.9;
+}
+#clearHistoryBtn:hover{
+  opacity: 1;
+}
+@media (max-width:700px){
+  form{
+    width: 90%;
+  }
+}
+@media (max-width:600px){
+  #title h1{
+    font-size: 90%;
+  }
+}
